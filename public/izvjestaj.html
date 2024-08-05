@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Izvještaj</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="sifrant.html">Šifrant</a></li>
+            <li><a href="unos_radnika.html">Unos radnika</a></li>
+            <li><a href="evidencija_rada.html">Evidencija rada</a></li>
+            <li><a href="izvjestaj.html">Izvještaj</a></li>
+            <li><a href="/logout">Odjava</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Izvještaj</h2>
+        <form id="izvjestaj-form">
+            <label for="djelatnik_id">Djelatnici:</label>
+            <select id="djelatnik_id" name="djelatnik_id" multiple required></select>
+            <label for="datum_od">Datum Od:</label>
+            <input type="date" id="datum_od" name="datum_od" required>
+            <label for="datum_do">Datum Do:</label>
+            <input type="date" id="datum_do" name="datum_do" required>
+            <button type="submit">Generiraj Izvještaj</button>
+        </form>
+        <h3>Popis Evidencija</h3>
+        <table id="izvjestaj-table">
+            <thead>
+                <tr>
+                    <th>Djelatnik</th>
+                    <th>Vrsta Rada</th>
+                    <th>Datum</th>
+                    <th>Količina</th>
+                    <th>Cijena</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated here from database -->
+            </tbody>
+        </table>
+        <h3>Ukupna Količina: <span id="ukupna-kolicina"></span></h3>
+        <h3>Ukupna Cijena: <span id="ukupna-cijena"></span></h3>
+        <script src="js/izvjestaj.js"></script>
+    </div>
+</body>
+</html>
+
+
+

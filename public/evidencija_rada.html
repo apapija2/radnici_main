@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Evidencija Rada</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="sifrant.html">Šifrant</a></li>
+            <li><a href="unos_radnika.html">Unos radnika</a></li>
+            <li><a href="evidencija_rada.html">Evidencija rada</a></li>
+            <li><a href="izvjestaj.html">Izvještaj</a></li>
+            <li><a href="/logout">Odjava</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Evidencija Rada</h2>
+        <form id="evidencija-form">
+            <label for="djelatnik_id">Djelatnik:</label>
+            <select id="djelatnik_id" name="djelatnik_id" required></select>
+            <div id="vrste-rada">
+                <div>
+                    <label for="vrsta_rada_id_0">Vrsta Rada 1:</label>
+                    <select id="vrsta_rada_id_0" name="vrsta_rada_id_0" required></select>
+                    <label for="kolicina_0">Količina:</label>
+                    <input type="number" id="kolicina_0" name="kolicina_0" required>
+                </div>
+            </div>
+            <label for="datum">Datum:</label>
+            <input type="date" id="datum" name="datum" required>
+            <button type="button" id="dodaj-vrstu-rada">Dodaj Vrstu Rada</button>
+            <button type="submit">Dodaj Evidenciju</button>
+        </form>
+        <h3>Popis Evidencija</h3>
+        <table id="evidencija-table">
+            <thead>
+                <tr>
+                    <th>Djelatnik</th>
+                    <th>Vrsta Rada</th>
+                    <th>Datum</th>
+                    <th>Količina</th>
+                    <th>Cijena</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated here from database -->
+            </tbody>
+        </table>
+        <script src="js/evidencija.js"></script>
+    </div>
+</body>
+</html>
+
+
+
+

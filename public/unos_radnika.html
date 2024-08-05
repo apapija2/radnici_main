@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Unos Radnika</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="sifrant.html">Šifrant</a></li>
+            <li><a href="unos_radnika.html">Unos radnika</a></li>
+            <li><a href="evidencija_rada.html">Evidencija rada</a></li>
+            <li><a href="izvjestaj.html">Izvještaj</a></li>
+            <li><a href="/logout">Odjava</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Unos Radnika</h2>
+        <form id="djelatnik-form">
+            <label for="ime">Ime:</label>
+            <input type="text" id="ime" name="ime" required>
+            <label for="prezime">Prezime:</label>
+            <input type="text" id="prezime" name="prezime" required>
+            <label for="jmbg">JMBG:</label>
+            <input type="text" id="jmbg" name="jmbg" required>
+            <label for="kontakt">Kontakt:</label>
+            <input type="text" id="kontakt" name="kontakt" required>
+            <label for="adresa">Adresa:</label>
+            <input type="text" id="adresa" name="adresa" required>
+            <label for="aktivan">Aktivan:</label>
+            <input type="checkbox" id="aktivan" name="aktivan">
+            <button type="submit">Dodaj Djelatnika</button>
+        </form>
+        <h3>Popis Djelatnika</h3>
+        <table id="djelatnici-table">
+            <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>JMBG</th>
+                    <th>Kontakt</th>
+                    <th>Adresa</th>
+                    <th>Aktivan</th>
+                    <th>Izbriši</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be populated here from database -->
+            </tbody>
+        </table>
+        <script src="js/djelatnici.js"></script>
+    </div>
+</body>
+</html>
