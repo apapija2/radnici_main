@@ -8,7 +8,8 @@
 </head>
 <body>
     <nav>
-        <ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <ul id="nav-links">
             <li><a href="sifrant.html">Šifrant</a></li>
             <li><a href="unos_radnika.html">Unos radnika</a></li>
             <li><a href="evidencija_rada.html">Evidencija rada</a></li>
@@ -16,6 +17,7 @@
             <li><a href="/logout">Odjava</a></li>
         </ul>
     </nav>
+    
     <div class="container">
         <h2>Šifrant</h2>
         <form id="sifrant-form">
@@ -31,12 +33,16 @@
                 <tr>
                     <th>Vrsta Rada</th>
                     <th>Cijena</th>
+                    <th>Izbriši</th> <!-- Dodana kolona za brisanje -->
                 </tr>
             </thead>
             <tbody>
-                <!-- Data will be populated here from database -->
+                <!-- Data will be populated ovde iz baze -->
             </tbody>
         </table>
         <script src="js/sifrant.js"></script>
+        <script src="js/script.js"></script> 
     </div>
 </body>
+</html>
+

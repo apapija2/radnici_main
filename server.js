@@ -44,7 +44,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Middleware for checking if user is logged in
 function checkAuth(req, res, next) {
-    console.log("Checking authentication, loggedIn:", req.session.loggedIn);
+    
+
     if (req.session.loggedIn) {
         next();
     } else {
@@ -298,6 +299,21 @@ app.get('/izvjestaj', checkAuth, async (req, res) => {
         res.status(500).send('Greška pri dohvaćanju izvještaja.');
     }
 });
+
+app.delete('/izbrisi-vrstu-rada/:id', checkAuth, async (req, res) => {
+    try {
+        await VrstaRada.findByIdAndDelete(req.params.id);
+        res.json({ success: true });
+    } catch (error) {
+        console.error(error);
+        res.json({ success: false, error: 'Greška pri brisanju vrste rada.' });
+    }
+});
+
+function toggleMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show');
+}
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

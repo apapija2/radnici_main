@@ -8,7 +8,8 @@
 </head>
 <body>
     <nav>
-        <ul>
+        <div class="menu-icon" onclick="toggleMenu()"></div>
+        <ul id="nav-links">
             <li><a href="sifrant.html">Šifrant</a></li>
             <li><a href="unos_radnika.html">Unos radnika</a></li>
             <li><a href="evidencija_rada.html">Evidencija rada</a></li>
@@ -26,6 +27,7 @@
                     <th>Vrsta Rada</th>
                     <th>Datum</th>
                     <th>Količina</th>
+                    <th>Cijena</th> <!-- Dodan stupac za cijenu -->
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +35,7 @@
             </tbody>
         </table>
         <script src="js/dashboard.js"></script>
+        <script src="js/script.js"></script> <!-- Dodana inkluzija script.js -->
     </div>
 </body>
 </html>

@@ -30,11 +30,11 @@ document.getElementById('izvjestaj-form').addEventListener('submit', function(e)
                     <td>${evidencija.vrsta_rada_id.vrsta_rada}</td>
                     <td>${evidencija.datum.split('T')[0]}</td>
                     <td>${evidencija.kolicina}</td>
-                    <td>${cijena}</td>
+                    <td>${cijena} KM</td>
                 `;
             });
             document.getElementById('ukupna-kolicina').innerText = ukupnaKolicina;
-            document.getElementById('ukupna-cijena').innerText = ukupnaCijena;
+            document.getElementById('ukupna-cijena').innerText = ukupnaCijena + " KM";
         })
         .catch(error => {
             console.error('Error:', error);

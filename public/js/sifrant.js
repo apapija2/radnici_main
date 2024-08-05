@@ -44,12 +44,12 @@ function fetchVrsteRada() {
                 row.innerHTML = `
                     <td contenteditable="true" onBlur="updateVrstaRada('${vrsta._id}', 'vrsta_rada', this.innerText)">${vrsta.vrsta_rada}</td>
                     <td contenteditable="true" onBlur="updateVrstaRada('${vrsta._id}', 'cijena', this.innerText)">${vrsta.cijena} KM</td>
+                    <td><button onClick="deleteVrstaRada('${vrsta._id}')">Izbriši</button></td>
                 `;
             });
         })
         .catch(error => {
             console.error('Error:', error);
-            
         });
 }
 
@@ -74,6 +74,21 @@ function updateVrstaRada(id, field, value) {
     });
 }
 
-
+function deleteVrstaRada(id) {
+    fetch(`/izbrisi-vrstu-rada/${id}`, {
+        method: 'DELETE'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            location.reload();
+        } else {
+            alert('Greška pri brisanju vrste rada.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
 
 document.addEventListener('DOMContentLoaded', fetchVrsteRada);
